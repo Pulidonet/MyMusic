@@ -6,19 +6,52 @@ body {
   color: #333;
 }
 
+/* Encabezado con imagen de fondo */
 header {
+  background-image: url('../img/fondoheader.png');
+  background-size: cover;
+  background-position: center;
+  padding: 60px 20px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
+  color: white;
+  position: relative;
 }
 
+/* Capa oscura para mejorar contraste */
+header::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+
+/* Contenido por encima de la capa oscura */
+header * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Logo */
 header img {
   max-height: 100px;
+  margin-bottom: 15px;
 }
 
+/* Título principal */
+header h1 {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 3em;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+}
+
+/* Subtítulo */
 .subtitulo {
   font-style: italic;
-  color: #b30000;
+  font-size: 1.2em;
+  color: #f0f0f0;
+  margin-top: 10px;
 }
 
 main {
@@ -67,7 +100,7 @@ footer {
   margin-top: 40px;
 }
 
-/* 📱 Diseño responsivo para móviles */
+/* Diseño responsivo para móviles */
 @media screen and (max-width: 600px) {
   body {
     padding: 10px;
