@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: url('../img/fondo.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 20px;
+}
+
+header img {
+  max-height: 100px;
+}
+
+.subtitulo {
+  font-style: italic;
+  color: #b30000;
+}
+
+main {
+  max-width: 900px;
+  margin: auto;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+h2 {
+  color: #b30000;
+}
+
+.formulario form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #b30000;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #990000;
+}
+
+footer {
+  text-align: center;
+  background-color: #000;
+  color: white;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* 📱 Diseño responsivo para móviles */
+@media screen and (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  header img {
+    max-width: 80px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+  input, textarea, button {
+    width: 100%;
+    font-size: 16px;
+  }
+
+  h1, h2 {
+    font-size: 1.5em;
+  }
+
+  .subtitulo {
+    font-size: 1em;
+  }
+}

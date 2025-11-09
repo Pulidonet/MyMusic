@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Emisora Escolar - IE República de China</title>
+  <link rel="stylesheet" href="cssestilos.css">
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo IE República de China">
+    <h1>Colegio República de China</h1>
+    <p class="subtitulo">Prototipo: Blog para la emisora escolar</p>
+  </header>
+
+  <main>
+    <section class="bienvenida">
+      <h2>Bienvenidos</h2>
+      <p>
+        Este espacio promueve la participación estudiantil, la comunicación y el talento de nuestros jóvenes a través de la música y la expresión radial.
+        Aquí los estudiantes pueden solicitar sus canciones y disfrutar de una programación pensada para toda la comunidad educativa.
+      </p>
+    </section>
+
+    <section class="formulario">
+      <h2>¡Pide tu canción!</h2>
+      <form action="http://localhost:8080" method="post">
+        <label for="email">Correo electrónico:</label>
+        <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
+
+        <label for="comentario">Comentario o canción:</label>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe tu solicitud aquí..." required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>Derechos reservados © 2024 IE República de China</p>
+  </footer>
+
+  <script>
+    document.querySelector("form").addEventListener("submit", function(e) {
+      const email = document.getElementById("email").value.trim();
+      const comentario = document.getElementById("comentario").value.trim();
+      if (!email || !comentario) {
+        alert("Por favor completa todos los campos.");
+        e.preventDefault();
+      }
+    });
+  </script>
+</body>
+</html>
