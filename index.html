@@ -4,30 +4,74 @@
   <meta charset="UTF-8">
   <title>Emisora Escolar - IED República de China</title>
   <link rel="stylesheet" href="cssestilos.css">
+  <style>
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    header h1 {
+      font-family: 'Comic Sans MS', cursive;
+      font-size: 2em;
+      color: #d60000;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .subtitulo {
+      font-size: 1em;
+      color: #333;
+      margin-top: 5px;
+    }
+
+    .imagen-audifonos {
+      height: 80px;
+      margin-left: 20px;
+    }
+
+    .formulario textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 1em;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <img src="imagenlogo.png" alt="Logo IED República de China">
-    <h1>EMISORA ESCOLAR "JUVENTUD ESTÉREO"</h1>
-    <p class="subtitulo">Bienvenidos a la emisora escolar de la Institución Educativa Distrital República de China.</p>
+    <div>
+      <img src="imagenlogo.png" alt="Logo IED República de China" style="height: 60px;">
+      <h1>EMISORA ESCOLAR "JUVENTUD ESTÉREO"</h1>
+      <p class="subtitulo">Bienvenidos a la emisora escolar de la Institución Educativa Distrital República de China.</p>
+    </div>
+    <img src="audifonos.jpg" alt="Estudiantes con audífonos" class="imagen-audifonos">
   </header>
 
   <main>
     <section class="bienvenida">
       <h2>Bienvenid@s</h2>
       <p>
-      Aquí los estudiantes pueden solicitar sus canciones y disfrutar de una programación pensada para toda la comunidad educativa.
+        Aquí los estudiantes pueden solicitar sus canciones y disfrutar de una programación pensada para toda la comunidad educativa.
       </p>
     </section>
 
     <section class="formulario">
-      <h2>¡En este espacio podrás solicitar tu cancion favorita!</h2>
+      <h2>¡En este espacio podrás solicitar tu canción favorita!</h2>
       <form action="http://localhost:8080" method="post">
         <label for="email">Correo electrónico:</label>
         <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
 
         <label for="comentario">Comentario o canción:</label>
-        <textarea id="comentario" name="comentario" rows="4" placeholder="Escribe tu solicitud aquí..." required></textarea>
+        <textarea id="comentario" name="comentario" rows="4" placeholder="Este espacio está diseñado para que solicites tu canción favorita" required></textarea>
 
         <button type="submit">Enviar</button>
       </form>
@@ -36,7 +80,7 @@
 
   <footer>
     <p>Derechos reservados © 2025 IED República de China</p>
-    <p>Desarrollado por BLUME<p>
+    <p>Desarrollado por BLUME</p>
   </footer>
 
   <script>
