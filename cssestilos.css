@@ -12,7 +12,6 @@ header {
   background-size: cover;
   background-position: center;
   padding: 60px 20px;
-  text-align: center;
   color: white;
   position: relative;
 }
@@ -38,12 +37,30 @@ header img {
   margin-bottom: 15px;
 }
 
+/* Contenedor del título y la imagen */
+.titulo-con-imagen {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  text-align: left;
+}
+
 /* Título principal */
 header h1 {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Comic Sans MS', cursive;
   font-size: 3em;
   margin: 0;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+  text-transform: uppercase;
+  color: #ffffff;
+}
+
+/* Imagen de los chicos con audífonos */
+.imagen-audifonos {
+  height: 80px;
+  border-radius: 10px;
 }
 
 /* Subtítulo */
@@ -76,6 +93,11 @@ input, textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+}
+
+textarea {
+  width: 100%;
+  font-size: 1em;
 }
 
 button {
@@ -125,5 +147,14 @@ footer {
 
   .subtitulo {
     font-size: 1em;
+  }
+
+  .titulo-con-imagen {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagen-audifonos {
+    height: 60px;
   }
 }
