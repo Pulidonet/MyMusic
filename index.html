@@ -2,11 +2,19 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Emisora Escolar - IED República de China</title>
+  <title>Emisora Escolar - Juventud Estéreo</title>
   <link rel="stylesheet" href="cssestilos.css">
 </head>
 <body>
-  <header>
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#solicitudes">Solicitar Canción</a></li>
+      <li><a href="#editor">Editor Musical</a></li>
+    </ul>
+  </nav>
+
+  <header id="inicio">
     <div class="titulo-con-imagen">
       <img src="img/imagenlogo.png" alt="Logo IED República de China" class="logo-colegio">
       <h1>EMISORA ESCOLAR "JUVENTUD ESTÉREO"</h1>
@@ -23,8 +31,8 @@
       </p>
     </section>
 
-    <section class="formulario">
-      <h2>¡En este espacio podrás solicitar tu canción favorita!</h2>
+    <section class="formulario" id="solicitudes">
+      <h2>¡Solicita tu canción favorita!</h2>
       <form action="http://localhost:8080" method="post">
         <label for="email">Correo electrónico:</label>
         <input type="email" id="email" name="email" placeholder="ejemplo@correo.com" required>
@@ -34,6 +42,17 @@
 
         <button type="submit">Enviar</button>
       </form>
+    </section>
+
+    <section class="editor-musical" id="editor">
+      <h2>🎶 ¡Crea tu propia canción aquí!</h2>
+      <iframe 
+        src="https://ampedstudio.com" 
+        width="100%" 
+        height="600" 
+        frameborder="0" 
+        allowfullscreen>
+      </iframe>
     </section>
   </main>
 
