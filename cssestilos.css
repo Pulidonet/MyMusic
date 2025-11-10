@@ -41,6 +41,19 @@ header {
   padding: 60px 20px;
   color: white;
   position: relative;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+/* Animación de entrada */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Capa oscura para mejorar contraste */
@@ -65,15 +78,21 @@ header * {
   flex-wrap: wrap;
   gap: 30px;
   text-align: center;
+  animation: fadeInUp 1.5s ease-out;
 }
 
-.logo-colegio {
-  height: 80px;
-}
-
+.logo-colegio,
 .imagen-audifonos {
   height: 80px;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-colegio:hover,
+.imagen-audifonos:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
 
 header h1 {
@@ -83,6 +102,7 @@ header h1 {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
   text-transform: uppercase;
   color: #ffffff;
+  text-align: center;
 }
 
 .subtitulo {
@@ -90,6 +110,7 @@ header h1 {
   font-size: 1.2em;
   color: #f0f0f0;
   margin-top: 10px;
+  text-align: center;
 }
 
 main {
@@ -98,10 +119,18 @@ main {
   background-color: rgba(255, 255, 255, 0.85);
   padding: 40px;
   border-radius: 10px;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 h2 {
   color: #b30000;
+  text-align: center;
+}
+
+.bienvenida p {
+  font-size: 1.2em;
+  text-align: center;
+  color: #333;
 }
 
 .formulario form {
@@ -129,21 +158,35 @@ button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
 }
 
 button:hover {
   background-color: #990000;
 }
 
-/* Editor musical */
-.editor-musical {
+/* Editor musical personalizado */
+.editor-audio {
   margin-top: 40px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
+  animation: fadeInUp 1.5s ease-out;
 }
 
+.editor-audio input[type="number"] {
+  width: 60px;
+  margin: 0 10px;
+}
+
+/* Footer */
 footer {
   text-align: center;
   background-color: #000;
@@ -193,4 +236,3 @@ footer {
     gap: 10px;
   }
 }
-
