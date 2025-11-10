@@ -127,6 +127,12 @@ h2 {
   text-align: center;
 }
 
+.bienvenida p {
+  font-size: 1.2em;
+  text-align: center;
+  color: #333;
+}
+
 .formulario form {
   display: flex;
   flex-direction: column;
@@ -165,16 +171,22 @@ button:hover {
   background-color: #990000;
 }
 
-/* Editor musical */
-.editor-musical {
+/* Editor musical personalizado */
+.editor-audio {
   margin-top: 40px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   padding: 20px;
   border-radius: 10px;
   text-align: center;
   animation: fadeInUp 1.5s ease-out;
 }
 
+.editor-audio input[type="number"] {
+  width: 60px;
+  margin: 0 10px;
+}
+
+/* Footer */
 footer {
   text-align: center;
   background-color: #000;
@@ -224,5 +236,3 @@ footer {
     gap: 10px;
   }
 }
-
-
