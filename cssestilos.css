@@ -31,20 +31,25 @@ header * {
   z-index: 1;
 }
 
-/* Logo */
-header img {
-  max-height: 100px;
-  margin-bottom: 15px;
-}
-
-/* Contenedor del título y la imagen */
+/* Contenedor del título y las imágenes */
 .titulo-con-imagen {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
-  text-align: left;
+  gap: 30px;
+  text-align: center;
+}
+
+/* Logo del colegio */
+.logo-colegio {
+  height: 80px;
+}
+
+/* Imagen de los chicos con audífonos */
+.imagen-audifonos {
+  height: 80px;
+  border-radius: 10px;
 }
 
 /* Título principal */
@@ -55,12 +60,6 @@ header h1 {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
   text-transform: uppercase;
   color: #ffffff;
-}
-
-/* Imagen de los chicos con audífonos */
-.imagen-audifonos {
-  height: 80px;
-  border-radius: 10px;
 }
 
 /* Subtítulo */
@@ -151,9 +150,9 @@ footer {
 
   .titulo-con-imagen {
     flex-direction: column;
-    text-align: center;
   }
 
+  .logo-colegio,
   .imagen-audifonos {
     height: 60px;
   }
