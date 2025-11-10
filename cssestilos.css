@@ -6,6 +6,33 @@ body {
   color: #333;
 }
 
+/* Menú de navegación */
+nav {
+  background-color: #b30000;
+  padding: 10px 0;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
 /* Encabezado con imagen de fondo */
 header {
   background-image: url('../img/fondoheader.png');
@@ -25,7 +52,6 @@ header::before {
   z-index: 0;
 }
 
-/* Contenido por encima de la capa oscura */
 header * {
   position: relative;
   z-index: 1;
@@ -41,18 +67,15 @@ header * {
   text-align: center;
 }
 
-/* Logo del colegio */
 .logo-colegio {
   height: 80px;
 }
 
-/* Imagen de los chicos con audífonos */
 .imagen-audifonos {
   height: 80px;
   border-radius: 10px;
 }
 
-/* Título principal */
 header h1 {
   font-family: 'Comic Sans MS', cursive;
   font-size: 3em;
@@ -62,7 +85,6 @@ header h1 {
   color: #ffffff;
 }
 
-/* Subtítulo */
 .subtitulo {
   font-style: italic;
   font-size: 1.2em;
@@ -113,6 +135,15 @@ button:hover {
   background-color: #990000;
 }
 
+/* Editor musical */
+.editor-musical {
+  margin-top: 40px;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
 footer {
   text-align: center;
   background-color: #000;
@@ -156,4 +187,10 @@ footer {
   .imagen-audifonos {
     height: 60px;
   }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }
+
