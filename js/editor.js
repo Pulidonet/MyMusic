@@ -16,6 +16,7 @@ audioFileInput.addEventListener("change", function () {
       audioBuffer = buffer;
       const url = URL.createObjectURL(file);
       audioPlayer.src = url;
+      console.log("🎧 Audio cargado. Duración:", buffer.duration.toFixed(2), "segundos");
     });
   };
   reader.readAsArrayBuffer(file);
@@ -23,7 +24,7 @@ audioFileInput.addEventListener("change", function () {
 
 function recortarYDescargar() {
   if (!audioBuffer) {
-    alert("Primero sube un archivo de audio.");
+    alert("⚠️ Primero sube un archivo de audio.");
     return;
   }
 
@@ -32,7 +33,7 @@ function recortarYDescargar() {
   const duration = end - start;
 
   if (isNaN(start) || isNaN(end) || start >= end || end > audioBuffer.duration) {
-    alert("Verifica los tiempos de inicio y fin.");
+    alert("⚠️ Verifica los tiempos de inicio y fin.");
     return;
   }
 
@@ -110,12 +111,12 @@ function guardarSolicitud() {
   const comentario = document.getElementById("comentario").value.trim();
 
   if (!email || !comentario) {
-    alert("Por favor completa todos los campos.");
+    alert("⚠️ Por favor completa todos los campos.");
     return;
   }
 
   solicitudes.push({ email, comentario });
-  alert("¡Solicitud guardada!");
+  alert("✅ ¡Solicitud guardada!");
 
   document.getElementById("email").value = "";
   document.getElementById("comentario").value = "";
@@ -123,7 +124,7 @@ function guardarSolicitud() {
 
 function descargarCSV() {
   if (solicitudes.length === 0) {
-    alert("No hay solicitudes para descargar.");
+    alert("⚠️ No hay solicitudes para descargar.");
     return;
   }
 
