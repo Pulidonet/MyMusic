@@ -38,7 +38,7 @@
           <input type="text" id="comentario" placeholder="Canción pedida" required>
           <div class="botones">
             <button type="submit">Agregar</button>
-            <button type="button" onclick="descargarCSV()">Descargar CSV</button>
+            <button type="button" id="descargarBtn">Descargar CSV</button>
           </div>
         </form>
         <ul id="listaSolicitudes">
@@ -59,6 +59,15 @@
         </div>
       </div>
     </section>
+
+    <section class="editor-audio" id="editor">
+      <h2>Editor de Audio Escolar</h2>
+      <input type="file" id="audioFile" accept="audio/*"><br><br>
+      <audio id="audioPlayer" controls></audio><br><br>
+      <label>Inicio (segundos): <input type="number" id="startTime" min="0" value="0"></label>
+      <label>Fin (segundos): <input type="number" id="endTime" min="0" value="10"></label><br><br>
+      <button id="recortarBtn">Recortar con Fade y Descargar</button>
+    </section>
   </main>
 
   <footer>
@@ -66,16 +75,6 @@
     <p>Desarrollado por Santiago Pulido Castaño</p>
   </footer>
 
-  <script>
-    // Modo oscuro toggle
-    document.getElementById("modoToggle").addEventListener("click", () => {
-      document.body.classList.toggle("dark");
-    });
-
-    // Flip logo al hacer clic
-    document.getElementById("logoFlip").addEventListener("click", () => {
-      document.getElementById("logoFlip").classList.toggle("flipped");
-    });
-  </script>
+  <script src="editor.js"></script>
 </body>
 </html>
