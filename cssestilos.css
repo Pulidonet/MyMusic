@@ -1,26 +1,28 @@
 /* Desarrollado por Santiago Pulido Castaño */
-body {
+/* Desarrollado por Santiago Pulido Castaño */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: 'Segoe UI', sans-serif;
-  background: url('../img/fondo.jpg') no-repeat center center fixed;
-  background-size: cover;
-  color: #333;
 }
 
-/* Menú de navegación */
+body {
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
 nav {
   background-color: #b30000;
-  padding: 10px 0;
-  text-align: center;
+  padding: 1rem;
 }
 
 nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  list-style: none;
+  gap: 2rem;
 }
 
 nav a {
@@ -34,152 +36,90 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Encabezado con imagen de fondo */
 header {
-  background-image: url('../img/fondoheader.png');
-  background-size: cover;
-  background-position: center;
-  padding: 60px 20px;
-  color: white;
-  position: relative;
-  animation: fadeInUp 1.2s ease-out;
+  background-color: #eee;
+  padding: 2rem 1rem;
+  text-align: center;
 }
 
-/* Animación de entrada */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Capa oscura para mejorar contraste */
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 0;
-}
-
-header * {
-  position: relative;
-  z-index: 1;
-}
-
-/* Contenedor del título y las imágenes */
 .titulo-con-imagen {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 2rem;
   flex-wrap: wrap;
-  gap: 30px;
-  text-align: center;
-  animation: fadeInUp 1.5s ease-out;
 }
 
 .logo-colegio,
 .imagen-audifonos {
   height: 80px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 8px;
 }
 
-.logo-colegio:hover,
-.imagen-audifonos:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
-}
-
-header h1 {
-  font-family: 'Comic Sans MS', cursive;
-  font-size: 3em;
-  margin: 0;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+.texto-header h1 {
+  font-size: 2em;
+  color: #b30000;
   text-transform: uppercase;
-  color: #ffffff;
-  text-align: center;
 }
 
 .subtitulo {
-  font-style: italic;
-  font-size: 1.2em;
-  color: #f0f0f0;
-  margin-top: 10px;
-  text-align: center;
+  font-size: 1em;
+  color: #555;
+  margin-top: 0.5rem;
 }
 
 main {
-  max-width: 900px;
-  margin: auto;
-  background-color: rgba(255, 255, 255, 0.85);
-  padding: 40px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: white;
   border-radius: 10px;
-  animation: fadeInUp 1.5s ease-out;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 h2 {
   color: #b30000;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
-.bienvenida p {
-  font-size: 1.2em;
-  text-align: center;
-  color: #333;
-}
-
-.formulario form {
+form {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
 }
 
-input, textarea {
-  margin-bottom: 15px;
+input[type="text"],
+input[type="email"] {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-textarea {
-  width: 100%;
-  font-size: 1em;
+.botones {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
 }
 
 button {
   background-color: #b30000;
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
   background-color: #990000;
 }
 
-/* Editor musical personalizado */
 .editor-audio {
-  margin-top: 40px;
-  background-color: rgba(255, 255, 255, 0.95);
-  padding: 20px;
-  border-radius: 10px;
+  margin-top: 3rem;
   text-align: center;
-  animation: fadeInUp 1.5s ease-out;
 }
 
 .editor-audio input[type="number"] {
@@ -187,42 +127,16 @@ button:hover {
   margin: 0 10px;
 }
 
-/* Footer */
 footer {
   text-align: center;
   background-color: #000;
   color: white;
-  padding: 20px;
-  margin-top: 40px;
+  padding: 1rem;
+  margin-top: 3rem;
 }
 
-/* Diseño responsivo para móviles */
+/* Responsive */
 @media screen and (max-width: 600px) {
-  body {
-    padding: 10px;
-  }
-
-  header img {
-    max-width: 80px;
-  }
-
-  main {
-    padding: 20px;
-  }
-
-  input, textarea, button {
-    width: 100%;
-    font-size: 16px;
-  }
-
-  h1, h2 {
-    font-size: 1.5em;
-  }
-
-  .subtitulo {
-    font-size: 1em;
-  }
-
   .titulo-con-imagen {
     flex-direction: column;
   }
@@ -235,5 +149,9 @@ footer {
   nav ul {
     flex-direction: column;
     gap: 10px;
+  }
+
+  .botones {
+    flex-direction: column;
   }
 }
