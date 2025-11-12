@@ -90,7 +90,6 @@ main {
   padding: 2rem;
   background-color: var(--card);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .solicitudes-logo {
@@ -194,7 +193,6 @@ button:hover {
   align-items: center;
   text-align: center;
   padding: 1rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .logo-front {
@@ -243,29 +241,4 @@ footer {
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(10px); }
   to { opacity: 1; transform: translateY(0); }
-}
-
-@media screen and (max-width: 600px) {
-  .encabezado {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .imagen-audifonos {
-    height: 80px;
-  }
-
-  .solicitudes-logo {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .logo-flip {
-    width: 180px;
-    height: 180px;
-  }
-
-  .botones {
-    flex-direction: column;
-  }
 }
