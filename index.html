@@ -20,47 +20,41 @@
   <header id="inicio">
     <div class="titulo-con-imagen">
       <img src="img/imagenlogo.png" alt="Logo IED República de China" class="logo-colegio">
+      <div class="texto-header">
+        <h1>EMISORA ESCOLAR "JUVENTUD ESTÉREO"</h1>
+        <p class="subtitulo">Bienvenidos a la emisora escolar de la Institución Educativa Distrital República de China.</p>
+      </div>
       <img src="img/audifonos.jpg" alt="Estudiantes con audífonos" class="imagen-audifonos">
     </div>
-    <h1>EMISORA ESCOLAR "JUVENTUD ESTÉREO"</h1>
-    <p class="subtitulo">Bienvenidos a la emisora escolar de la Institución Educativa Distrital República de China.</p>
   </header>
 
   <main>
-    <section class="bienvenida">
-      <h2>Bienvenid@s</h2>
-      <p>
-        Aquí los estudiantes pueden solicitar sus canciones y disfrutar de una programación pensada para toda la comunidad educativa.
-      </p>
-    </section>
-
     <section class="formulario" id="solicitudes">
-      <h2>¡Solicita tu canción favorita!</h2>
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" placeholder="ejemplo@correo.com" required>
-
-      <label for="comentario">Comentario o canción:</label>
-      <textarea id="comentario" rows="4" placeholder="Este espacio está diseñado para que solicites tu canción favorita" required></textarea>
-
-      <button onclick="guardarSolicitud()">Guardar Solicitud</button>
-      <button onclick="descargarCSV()">Descargar CSV</button>
+      <h2>Solicita tu canción</h2>
+      <form>
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="text" id="comentario" placeholder="Canción pedida" required>
+        <div class="botones">
+          <button type="button" onclick="guardarSolicitud()">Enviar</button>
+          <button type="button" onclick="descargarCSV()">Descargar</button>
+        </div>
+      </form>
     </section>
 
     <section class="editor-audio" id="editor">
-      <h2>🎶 Editor de Audio Escolar</h2>
+      <h2>Editor de Audio Escolar</h2>
       <input type="file" id="audioFile" accept="audio/*"><br><br>
       <audio id="audioPlayer" controls></audio><br><br>
-
       <label>Inicio (segundos): <input type="number" id="startTime" min="0" value="0"></label>
       <label>Fin (segundos): <input type="number" id="endTime" min="0" value="10"></label><br><br>
-
       <button onclick="recortarYDescargar()">Recortar con Fade y Descargar</button>
     </section>
   </main>
 
   <footer>
     <p>Derechos reservados © 2025 IED República de China</p>
-    <p>Desarrollado por Blume</p>
+    <p>Desarrollado por Santiago Pulido Castaño</p>
   </footer>
 
   <script src="js/editor.js"></script>
