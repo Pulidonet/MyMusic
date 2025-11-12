@@ -16,7 +16,7 @@ audioFileInput.addEventListener("change", function () {
       audioBuffer = buffer;
       const url = URL.createObjectURL(file);
       audioPlayer.src = url;
-      console.log("🎧 Audio cargado. Duración:", buffer.duration.toFixed(2), "segundos");
+      showToast("🎧 Audio cargado correctamente");
     });
   };
   reader.readAsArrayBuffer(file);
@@ -24,7 +24,7 @@ audioFileInput.addEventListener("change", function () {
 
 function recortarYDescargar() {
   if (!audioBuffer) {
-    alert("⚠️ Primero sube un archivo de audio.");
+    showToast("⚠️ Primero sube un archivo de audio", true);
     return;
   }
 
@@ -33,7 +33,7 @@ function recortarYDescargar() {
   const duration = end - start;
 
   if (isNaN(start) || isNaN(end) || start >= end || end > audioBuffer.duration) {
-    alert("⚠️ Verifica los tiempos de inicio y fin.");
+    showToast("⚠️ Verifica los tiempos de inicio y fin", true);
     return;
   }
 
@@ -57,6 +57,7 @@ function recortarYDescargar() {
   }
 
   exportWAV(newBuffer, sampleRate);
+  showToast("✅ Recorte listo para descargar");
 }
 
 function exportWAV(buffer, sampleRate) {
@@ -107,30 +108,32 @@ function exportWAV(buffer, sampleRate) {
 const solicitudes = [];
 
 function guardarSolicitud() {
+  const nombre = document.getElementById("nombre").value.trim();
   const email = document.getElementById("email").value.trim();
   const comentario = document.getElementById("comentario").value.trim();
 
-  if (!email || !comentario) {
-    alert("⚠️ Por favor completa todos los campos.");
+  if (!nombre || !email || !comentario) {
+    showToast("⚠️ Por favor completa todos los campos", true);
     return;
   }
 
-  solicitudes.push({ email, comentario });
-  alert("✅ ¡Solicitud guardada!");
+  solicitudes.push({ nombre, email, comentario });
+  showToast("✅ ¡Solicitud guardada!");
 
+  document.getElementById("nombre").value = "";
   document.getElementById("email").value = "";
   document.getElementById("comentario").value = "";
 }
 
 function descargarCSV() {
   if (solicitudes.length === 0) {
-    alert("⚠️ No hay solicitudes para descargar.");
+    showToast("⚠️ No hay solicitudes para descargar", true);
     return;
   }
 
-  let csv = "Correo electrónico,Comentario\n";
+  let csv = "Nombre,Correo electrónico,Canción\n";
   solicitudes.forEach(s => {
-    csv += `"${s.email}","${s.comentario.replace(/"/g, '""')}"\n`;
+    csv += `"${s.nombre}","${s.email}","${s.comentario.replace(/"/g, '""')}"\n`;
   });
 
   const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
@@ -140,3 +143,22 @@ function descargarCSV() {
   a.download = "solicitudes.csv";
   a.click();
 }
+
+// 🔔 Toast de notificación
+function showToast(mensaje, error = false) {
+  const toast = document.createElement("div");
+  toast.textContent = mensaje;
+  toast.style.position = "fixed";
+  toast.style.bottom = "20px";
+  toast.style.left = "50%";
+  toast.style.transform = "translateX(-50%)";
+  toast.style.background = error ? "#b30000" : "#008000";
+  toast.style.color = "#fff";
+  toast.style.padding = "10px 20px";
+  toast.style.borderRadius = "5px";
+  toast.style.boxShadow = "0 0 10px rgba(0,0,0,0.2)";
+  toast.style.zIndex = "9999";
+  document.body.appendChild(toast);
+  setTimeout(() => toast.remove(), 3000);
+}
+
