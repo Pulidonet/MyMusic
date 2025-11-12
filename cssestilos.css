@@ -59,6 +59,7 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .texto-header {
@@ -132,6 +133,7 @@ button {
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
+  transition: background 0.3s ease;
 }
 
 button:hover {
@@ -149,6 +151,20 @@ button:hover {
   padding: 10px;
   margin-bottom: 8px;
   border-radius: 5px;
+  position: relative;
+  animation: fadeIn 0.5s ease;
+}
+
+#listaSolicitudes li button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #ccc;
+  color: #333;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .logo-box {
@@ -206,10 +222,50 @@ button:hover {
   object-fit: contain;
 }
 
+.editor-audio {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.editor-audio input[type="number"] {
+  width: 60px;
+  margin: 0 10px;
+}
+
 footer {
   text-align: center;
   background-color: #000;
   color: white;
   padding: 1rem;
   margin-top: 3rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 600px) {
+  .encabezado {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .imagen-audifonos {
+    height: 80px;
+  }
+
+  .solicitudes-logo {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .logo-flip {
+    width: 180px;
+    height: 180px;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
 }
