@@ -1,5 +1,4 @@
 /* Desarrollado por Santiago Pulido Castaño */
-/* Desarrollado por Santiago Pulido Castaño */
 * {
   margin: 0;
   padding: 0;
@@ -50,10 +49,9 @@ header {
   flex-wrap: wrap;
 }
 
-.logo-colegio,
 .imagen-audifonos {
-  height: 80px;
-  border-radius: 8px;
+  height: 100px;
+  border-radius: 10px;
 }
 
 .texto-header h1 {
@@ -69,7 +67,7 @@ header {
 }
 
 main {
-  max-width: 800px;
+  max-width: 900px;
   margin: 2rem auto;
   padding: 2rem;
   background-color: white;
@@ -83,7 +81,15 @@ h2 {
   margin-bottom: 1rem;
 }
 
-form {
+.formulario-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.formulario form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -117,6 +123,19 @@ button:hover {
   background-color: #990000;
 }
 
+.logo-box {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-box img {
+  max-width: 150px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
 .editor-audio {
   margin-top: 3rem;
   text-align: center;
@@ -141,9 +160,12 @@ footer {
     flex-direction: column;
   }
 
-  .logo-colegio,
   .imagen-audifonos {
-    height: 60px;
+    height: 80px;
+  }
+
+  .logo-box img {
+    max-width: 100px;
   }
 
   nav ul {
@@ -154,4 +176,10 @@ footer {
   .botones {
     flex-direction: column;
   }
+
+  .formulario-logo {
+    flex-direction: column;
+    align-items: center;
+  }
 }
+
