@@ -37,7 +37,6 @@ nav a:hover {
 header {
   background-color: #eee;
   padding: 2rem 1rem;
-  text-align: center;
 }
 
 .encabezado {
@@ -45,7 +44,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 2rem;
+  gap: 1rem;
 }
 
 .texto-header h1 {
@@ -63,6 +62,7 @@ header {
 .imagen-audifonos {
   height: 100px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 main {
@@ -77,7 +77,7 @@ main {
 .solicitudes-logo {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
 }
@@ -85,11 +85,6 @@ main {
 .solicitudes-tareas {
   flex: 1;
   min-width: 300px;
-}
-
-.solicitudes-tareas h2 {
-  color: #b30000;
-  margin-bottom: 1rem;
 }
 
 form {
@@ -139,18 +134,6 @@ button:hover {
   position: relative;
 }
 
-#listaSolicitudes li button {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  background: #ccc;
-  color: #333;
-  border: none;
-  padding: 4px 8px;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
 .logo-box {
   flex: 1;
   display: flex;
@@ -158,10 +141,51 @@ button:hover {
   align-items: center;
 }
 
-.logo-colegio {
-  max-width: 200px;
+.logo-flip {
+  width: 220px;
+  height: 220px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.logo-flip > div {
+  width: 100%;
+  height: 100%;
   border-radius: 10px;
+  backface-visibility: hidden;
+  transition: transform 0.6s;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.logo-front {
+  background: white;
+  transform: rotateY(0deg);
+}
+
+.logo-back {
+  background: #b30000;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.logo-flip.flipped .logo-front {
+  transform: rotateY(180deg);
+}
+
+.logo-flip.flipped .logo-back {
+  transform: rotateY(360deg);
+}
+
+.logo-colegio {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
 }
 
 .editor-audio {
@@ -197,11 +221,13 @@ footer {
     align-items: center;
   }
 
-  .logo-colegio {
-    max-width: 150px;
+  .logo-flip {
+    width: 180px;
+    height: 180px;
   }
 
   .botones {
     flex-direction: column;
   }
 }
+
