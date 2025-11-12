@@ -9,7 +9,6 @@ body {
   background-color: var(--bg);
   color: var(--text);
   font-family: 'Segoe UI', sans-serif;
-  line-height: 1.6;
   transition: all 0.3s ease;
 }
 
@@ -57,9 +56,13 @@ header {
 
 .encabezado {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
-  flex-wrap: wrap;
+}
+
+.texto-header {
+  flex: 1;
 }
 
 .imagen-audifonos {
@@ -203,16 +206,6 @@ button:hover {
   object-fit: contain;
 }
 
-.editor-audio {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.editor-audio input[type="number"] {
-  width: 60px;
-  margin: 0 10px;
-}
-
 footer {
   text-align: center;
   background-color: #000;
@@ -220,7 +213,3 @@ footer {
   padding: 1rem;
   margin-top: 3rem;
 }
-
-@media screen and (max-width: 600px) {
-  .encabezado {
-
