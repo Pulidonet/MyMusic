@@ -1,3 +1,6 @@
+// Proyecto desarrollado por Santiago Pulido Castaño
+
+// 🎶 Editor de audio con recorte y fade
 const audioFileInput = document.getElementById("audioFile");
 const audioPlayer = document.getElementById("audioPlayer");
 let audioBuffer = null;
@@ -96,5 +99,43 @@ function exportWAV(buffer, sampleRate) {
   const a = document.createElement("a");
   a.href = url;
   a.download = "recorte.wav";
+  a.click();
+}
+
+// 📥 Solicitudes de canciones sin servidor
+const solicitudes = [];
+
+function guardarSolicitud() {
+  const email = document.getElementById("email").value.trim();
+  const comentario = document.getElementById("comentario").value.trim();
+
+  if (!email || !comentario) {
+    alert("Por favor completa todos los campos.");
+    return;
+  }
+
+  solicitudes.push({ email, comentario });
+  alert("¡Solicitud guardada!");
+
+  document.getElementById("email").value = "";
+  document.getElementById("comentario").value = "";
+}
+
+function descargarCSV() {
+  if (solicitudes.length === 0) {
+    alert("No hay solicitudes para descargar.");
+    return;
+  }
+
+  let csv = "Correo electrónico,Comentario\n";
+  solicitudes.forEach(s => {
+    csv += `"${s.email}","${s.comentario.replace(/"/g, '""')}"\n`;
+  });
+
+  const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "solicitudes.csv";
   a.click();
 }
