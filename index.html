@@ -19,27 +19,31 @@
 
   <header id="inicio">
     <div class="titulo-con-imagen">
-      <img src="img/imagenlogo.png" alt="Logo IED República de China" class="logo-colegio">
+      <img src="img/audifonos.jpg" alt="Estudiantes con audífonos" class="imagen-audifonos">
       <div class="texto-header">
         <h1>EMISORA ESCOLAR "JUVENTUD ESTÉREO"</h1>
         <p class="subtitulo">Bienvenidos a la emisora escolar de la Institución Educativa Distrital República de China.</p>
       </div>
-      <img src="img/audifonos.jpg" alt="Estudiantes con audífonos" class="imagen-audifonos">
     </div>
   </header>
 
   <main>
-    <section class="formulario" id="solicitudes">
-      <h2>Solicita tu canción</h2>
-      <form>
-        <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="email" id="email" placeholder="Correo electrónico" required>
-        <input type="text" id="comentario" placeholder="Canción pedida" required>
-        <div class="botones">
-          <button type="button" onclick="guardarSolicitud()">Enviar</button>
-          <button type="button" onclick="descargarCSV()">Descargar</button>
-        </div>
-      </form>
+    <section class="formulario-logo" id="solicitudes">
+      <div class="formulario">
+        <h2>Solicita tu canción</h2>
+        <form>
+          <input type="text" id="nombre" placeholder="Nombre" required>
+          <input type="email" id="email" placeholder="Correo electrónico" required>
+          <input type="text" id="comentario" placeholder="Canción pedida" required>
+          <div class="botones">
+            <button type="button" onclick="guardarSolicitud()">Enviar</button>
+            <button type="button" onclick="descargarCSV()">Descargar</button>
+          </div>
+        </form>
+      </div>
+      <div class="logo-box">
+        <img src="img/imagenlogo.png" alt="Logo IED República de China" class="logo-colegio">
+      </div>
     </section>
 
     <section class="editor-audio" id="editor">
