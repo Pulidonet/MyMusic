@@ -20,6 +20,8 @@ audioFileInput.addEventListener("change", function () {
   reader.readAsArrayBuffer(file);
 });
 
+document.getElementById("recortarBtn").addEventListener("click", recortarYDescargar);
+
 function recortarYDescargar() {
   if (!audioBuffer) return;
 
@@ -132,7 +134,7 @@ function agregarSolicitud(s) {
   lista.appendChild(li);
 }
 
-function descargarCSV() {
+document.getElementById("descargarBtn").addEventListener("click", function () {
   if (solicitudes.length === 0) return;
 
   let csv = "Nombre,Correo,Canción\n";
@@ -146,7 +148,7 @@ function descargarCSV() {
   a.href = url;
   a.download = "solicitudes.csv";
   a.click();
-}
+});
 
 // 🌗 Modo oscuro toggle
 document.getElementById("modoToggle").addEventListener("click", () => {
